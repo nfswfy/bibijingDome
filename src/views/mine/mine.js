@@ -1,0 +1,9 @@
+angular.module('app.minePage',[])
+.config(function($stateProvider){
+  $stateProvider
+  .state({
+    name:"index.mine",
+    url:'/mine',
+    templateUrl:'src/views/mine/mine.html'
+  })
+})

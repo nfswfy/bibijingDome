@@ -1,0 +1,103 @@
+<!--<div >这是你想要的榜单</div>-->
+<!--<div ui-view=""></div>-->
+<!--<div></div>-->
+<!--<ul style="float: left">-->
+    <!--<li ng-repeat="i in data track by $index" id="{{i.id}}">{{i.name}}</li>-->
+<!--</ul>-->
+<!--<ul style="float: right">-->
+    <!--<li ng-repeat="i in show track by $index" >{{i.title}}</li>-->
+<!--</ul>-->
+
+<!--选择蒙版-->
+
+<!--<div id="towCategory">-->
+    <!--<div class="title"><hr/><p>服饰</p><hr/></div>-->
+    <!--<table>-->
+        <!--<tr>-->
+            <!--<td>女装</td>-->
+            <!--<td>男装</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td>服饰配件</td>-->
+        <!--</tr>-->
+    <!--</table>-->
+    <!--<div class="close">取消</div>-->
+<!--</div>-->
+
+<div id="frame">
+    <div id="search">
+        <div class="ej_head" style="width: 100%">
+            <div class="ej_bt">
+                <a class="fanhui" ui-sref="index.home"></a>
+                <div class="ej_title" style="float: left;display: inline-block;font-size: 16px;width: inherit;">{{bd}}榜</div>
+                <div style="float: right;display: inline-block;">
+                    <div style="float: right; padding-left: 7px; margin-right: 10px; background-color: #eeeeee; border-radius: 3px; height: 30px; line-height: 30px; margin-top: 10px; width: 121px;">
+                        <form method="post" id="form_search" action="#">
+                            <input name="keyword" type="search" style="background-color: #eeeeee; width: 100px;" placeholder="查榜单"/>
+                        </form>
+                    </div>
+                    <img id="search_img" src="src/images/ss.png" alt="" style="width: 16px;position: absolute;right: 15px;top: 17px;">
+                </div>
+            </div>
+            <div class="zz"></div>
+            <div id="search_tips" style="display:none;position: absolute;width: 100%;line-height: 42px;text-align: center;background: #eee;z-index: 7;">
+                <span id="search_tips_text" style="font-size: 13px;"></span>
+                <span id="close_search" style="background-repeat: no-repeat;background-position: center;width: 40px;height: 100%;position: absolute;"></span>
+            </div>
+            <div class="nav_yj_">
+                <!--选择种类栏-->
+                <div class="nav_yj">
+                    <div class="yj_xl_hide"><p>为您精选以下分类</p></div>
+                    <ul class="yj_nr">
+                        <li class="yj_active">服饰</li>
+                        <li>鞋靴/箱包</li>
+                    </ul>
+                </div>
+                <div class="bt_more"><p class="bt_more_ bt_more_o"></p></div>
+                <div class="nav_yj_xl">
+                    <ul>
+                        <li>服饰</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="ej_main">
+            <div class="ej_menu">
+                <ul>
+                    <li ng-repeat="i in data track by $index" id="{{i.id}}" ng-click="listcont(i.name)">{{i.name}}</li>
+                </ul>
+            </div>
+            <div class="sj_nr">
+                <ul id="data_container">
+                    <li ng-repeat="i in show track by $index">
+                        <div class="sj_pic"><img ng-src="{{i.imgUrl}}"/><div class="sj_pm">1</div></div>
+                        <div class="sj_title">{{i.title}}</div>
+                        <div class="sj_jg">￥ {{i.price}}</div>
+                        <div class="sj_bj">来自{{i.domaincount}}个商城，共{{i.quote}}条报价</div>
+                    </li>
+                </ul>
+                <div id="no_data" style="text-align: center;display: none;">
+                    抱歉没有数据~
+                </div>
+                <div id="search_category" style="text-align: center;line-height: 50px;color:#0098ff;display: none;"><p>查看所有<span class="key">手机</span><img style="height: 11px;padding-left: 2px;" src="src/images/haopingye_qianwansousuo.png"/></p></div>
+            </div>
+        </div>
+
+        <div class="phb_menu">
+            <div class="phb_nav">
+                <a ui-sref="haopin" class="tm_div tm_div_select"><span><img src="src/images/main_home_bangdan2.png" alt=""/></span><div class="main_an">好评榜</div> </a>
+                <a ui-sref="renqi" class="tm_div"><span><img src="src/images/main_home_bangdan1.png" alt=""/></span><div class="main_an">人气榜</div> </a>
+                <a ui-sref="jianjia" class="tm_div"><span><img src="src/images/main_home_bangdan3.png" alt=""/></span><div class="main_an">降价榜</div> </a>
+                <a ui-sref="pinpai" class="tm_div"><span><img src="src/images/main_home_bangdan4.png" alt=""/></span><div class="main_an">品牌榜</div> </a>
+            </div>
+            <div class="phb_nav">
+                <a ui-sref="wanghong" class="tm_div"><span><img src="src/images/main_home_bangdan5.png" alt=""/></span><div class="main_an">网红榜</div> </a>
+                <a ui-sref="mingxing" class="tm_div"><span><img src="src/images/main_home_bangdan6.png" alt=""/></span><div class="main_an">明星榜</div> </a>
+                <a ui-sref="xiaoliang" class="tm_div"><span><img src="src/images/main_home_bangdan7.png" alt=""/></span><div class="main_an">销量榜</div> </a>
+                <a ui-sref="zonghe" class="tm_div"><span><img src="src/images/main_home_bangdan8.png" alt=""/></span><div class="main_an">综合榜</div> </a>
+            </div>
+            <a class="phb_qx" ng-click="phbqx()">取消</a>
+        </div>
+        <div class="phb_an" ng-click="phban()">排行榜</div>
+    </div>
+</div>

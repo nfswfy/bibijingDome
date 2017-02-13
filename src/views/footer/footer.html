@@ -1,0 +1,45 @@
+<style>
+    .ac{
+        color: #007aff;
+    }
+    .active{
+        color: #007aff!important;
+        background: url("src/images/icon_home_search_blue.png");
+    }
+    .active2{
+        color: #007aff!important;
+        background: url("src/images/icon_home_search_blue.png")
+    }
+    .active3{
+        color: #007aff!important;
+        background: url("src/images/icon_home_rank_blue.png");
+    }
+    .active4{
+         color: #007aff!important;
+         background: url("src/images/icon_home_data_blue.png");
+     }
+    .active5{
+        color: #007aff!important;
+        background: url("src/images/icon_home_user_blue.png");
+    }
+</style>
+<div ui-view></div>
+<footer id="menu">
+    <ul>
+        <li class="menu1"  ui-sref="index.home" ui-sref-active="active">
+            <div class="menu_li"  >首页</div>
+        </li>
+        <li class="menu2" ui-sref="index.search" ui-sref-active="active2">
+            <div class="menu_li" >搜索</div>
+        </li>
+        <li class="menu3" ui-sref-active="active3" ui-sref="main.renqi">
+            <div class="menu_li">排行</div>
+        </li>
+        <li class="menu4" ui-sref-active="active4" ui-sref="index.data">
+            <div class="menu_li">数据</div>
+        </li>
+        <li class="menu5" ui-sref="index.mine" ui-sref-active="active5">
+            <div class="menu_li">我的</div>
+        </li>
+    </ul>
+</footer>

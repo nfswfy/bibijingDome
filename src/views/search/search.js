@@ -1,0 +1,9 @@
+angular.module('app.searchPage',[])
+.config(function($stateProvider){
+  $stateProvider
+  .state({
+    name:"index.search",
+    url:'/search',
+    templateUrl:'src/views/search/search.html'
+  })
+})
